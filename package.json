@@ -4,10 +4,11 @@
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
+	"private": false,
 	"scripts": {
 		"build": "tsup src/index.ts --format cjs,esm --dts",
 		"lint": "tsc",
-		"release": "pnpm run lint && pnpm run build && changeset publish"
+		"release": "pnpm run lint && pnpm run build && changeset version && changeset publish"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.0",
